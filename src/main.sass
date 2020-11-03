@@ -9,15 +9,14 @@ body
 
 ul
     width: 210px
-    height: 400px
 
-    padding: 10px
+    padding: 15px
     margin: 100px auto 0 auto
     
     display: flex
     flex-direction: column
     align-items: center
-    justify-content: space-between
+    justify-content: flex-start
 
     list-style: none
     
@@ -25,12 +24,15 @@ ul
     border-radius: 5px
 
 li  
-    width: 200px
+    width: 190px
     height: 50px
+
+    margin:  5px 0
+    padding: 0 0 0 10px
 
     display: flex
     align-items: center
-    justify-content: center
+    justify-content: flex-start
 
     font-size: 20px
     font-family: Arial
@@ -41,6 +43,8 @@ li
     border-radius: 5px
     // &:hover
     //     cursor: grab
+.dragIcon
+    width: 50px
 
 .over
     @include inline-animation(0.1s)
