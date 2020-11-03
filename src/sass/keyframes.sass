@@ -1,0 +1,46 @@
+// @mixin keyframes($name) 
+//     @-webkit-keyframes $name 
+//         @content;
+    
+//     @-moz-keyframes $name 
+//         @content;
+    
+//     @-ms-keyframes $name 
+//         @content;
+    
+//     @keyframes $name 
+//         @content;
+    
+// @include keyframes(dissapear)
+//     0%
+//         color: rgba(33, 37, 41, 1)
+//         border: 5px solid rgba(33, 37, 41, 1)
+            
+//     50%
+//         color: rgba(33, 37, 41, 0.5)
+        
+//     100%
+//         color: rgba(33, 37, 41, 0)
+//         border: 5px dashed 212529
+@mixin inline-animation($duration)
+    $name: inline-#{unique-id()}
+
+    @keyframes #{$name}
+        // @content
+        0%
+            color: rgba(33, 37, 41, 1)
+
+        50%
+            color: rgba(33, 37, 41, 0.5)
+            
+        100%
+            color: rgba(33, 37, 41, 0)
+        
+    animation:
+        name: $name
+        duration: $duration
+        iteration-count: 1
+        fill-mode: forwards
+        delay: 0
+
+    

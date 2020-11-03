@@ -1,7 +1,9 @@
 //style:
 import './main.sass';
 
-//DOM refs:
-const Heading = document.getElementsByClassName('heading')[0];
+//js:
+import SetUpDraggable from './functionality/SetUpDraggable';
 
-Heading.textContent = 'Project bundled';
+if( document.getElementsByTagName('body')[0] !== undefined ){
+    window.addEventListener('load', () => SetUpDraggable());
+}
