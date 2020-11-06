@@ -7,26 +7,27 @@ import {
     dragEnd
 } from './DragFunctions';
 
+import OnMouseDown from './DraggableBall';
+
 let Dragable = document.getElementsByClassName('draggable');
-let DragIcon = document.getElementsByClassName('dragIcon');
+let Ball = document.getElementsByClassName('ball')[0];
+
 
 const SetUpDraggable = () => {
-    for (let key in DragIcon){
-        if (key.length === 1) {
-            DragIcon[key].addEventListener('mousedown', function() { this.parentNode.setAttribute("draggable", false); });
-            DragIcon[key].addEventListener('mouseup', function() { this.parentNode.setAttribute("draggable", true); });
-        }
+    if (Ball !== undefined) {
+        Ball.addEventListener('mousedown', (e) => OnMouseDown(e, Ball), false);
     }
-    
-    for (let key in Dragable){
-        if (key.length === 1) {
-                    
-            Dragable[key].addEventListener('dragstart', dragStart, false);
-            Dragable[key].addEventListener('dragenter', dragEnter, false);
-            Dragable[key].addEventListener('dragover', dragOver, false);
-            Dragable[key].addEventListener('dragleave', dragLeave, false);
-            Dragable[key].addEventListener('drop', dragDrop, false);
-            Dragable[key].addEventListener('dragend', dragEnd, false);
+
+    if (Dragable !== undefined) {
+        for (let key in Dragable){
+            if (key.length === 1) {
+                Dragable[key].addEventListener('dragstart', dragStart, false);
+                Dragable[key].addEventListener('dragenter', dragEnter, false);
+                Dragable[key].addEventListener('dragover', dragOver, false);
+                Dragable[key].addEventListener('dragleave', dragLeave, false);
+                Dragable[key].addEventListener('drop', dragDrop, false);
+                Dragable[key].addEventListener('dragend', dragEnd, false);
+            }
         }
     }
 };

@@ -7,12 +7,19 @@
 body
     background-color: lighthgray
 
+#root
+    height: 100vh
+
+    display: flex
+    align-items: center
+    justify-content: center
+
 ul
     width: 210px
 
     padding: 15px
-    margin: 100px auto 0 auto
-    
+    margin: 0 15px 0 0
+
     display: flex
     flex-direction: column
     align-items: center
@@ -41,11 +48,45 @@ li
     
     border: 5px solid #212529
     border-radius: 5px
-    // &:hover
-    //     cursor: grab
+    
 .dragIcon
     width: 50px
 
 .over
     @include inline-animation(0.1s)
+
     border: 5px dashed #0059b3
+
+.droppableArea
+    width: 380px
+    height: 380px
+
+    border: 5px solid #212529
+    border-radius: 5px
+
+.ball
+    width: 50px
+    height: 50px
+
+    padding: 10px
+    margin: 5px
+
+    font-size: 20px
+    font-family: Arial
+    font-weight: bolder
+    color: #212529
+
+    display: flex
+    align-items: center
+    justify-content: center
+    
+    overflow: hidden
+
+    border: 5px solid #212529
+    border-radius: 5px
+
+    cursor: grab
+
+    &:hover
+        background-color: yellow        
+        border: 5px dotted #212529
