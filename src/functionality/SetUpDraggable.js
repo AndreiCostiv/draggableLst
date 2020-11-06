@@ -10,12 +10,12 @@ import {
 import OnMouseDown from './DraggableBall';
 
 let Dragable = document.getElementsByClassName('draggable');
-let Ball = document.getElementsByClassName('ball')[0];
+let DraggableSquare = document.getElementsByClassName('draggableSquare')[0];
 
 
 const SetUpDraggable = () => {
-    if (Ball !== undefined) {
-        Ball.addEventListener('mousedown', (e) => OnMouseDown(e, Ball), false);
+    if (DraggableSquare !== undefined) {
+        DraggableSquare.addEventListener('mousedown', (e) => OnMouseDown(e, DraggableSquare), false);
     }
 
     if (Dragable !== undefined) {
