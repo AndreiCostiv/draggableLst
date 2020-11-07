@@ -2,6 +2,7 @@ const onMouseDown = (event, nodeElement) => {
     // (1) prepare to moving: make absolute and on top by z-index
     nodeElement.style.position = 'absolute';
     nodeElement.style.zIndex = 1000;
+    nodeElement.style.cursor = 'grabbing';
 
     // move it out of any current parents directly into body
     // to make it positioned relative to the body
@@ -30,6 +31,7 @@ const onMouseDown = (event, nodeElement) => {
   
     // (3) drop the nodeElement, remove unneeded handlers
     nodeElement.onmouseup = function() {
+        nodeElement.style.cursor = 'grab';
         document.removeEventListener('mousemove', onMouseMove);
         nodeElement.onmouseup = null;
     };
