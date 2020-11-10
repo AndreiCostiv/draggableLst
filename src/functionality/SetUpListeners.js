@@ -7,11 +7,14 @@ import {
     dragEnd
 } from './DragFunctions';
 
-import OnMouseDown from './DraggableSquare';
+import jsDraggableElem from './jsDraggableElem';
+import SortableJS from './SortableJS';
 
+//access to DOM elements:
 let Dragable = document.getElementsByClassName('draggable');
 let DraggableSquare = document.getElementsByClassName('draggableSquare')[0];
 
+//set's the event listeners when project is loaded to browser:
 const SetUpListeners = () => {
     if (Dragable !== undefined) {
         for (let key in Dragable){
@@ -27,8 +30,10 @@ const SetUpListeners = () => {
     }
 
     if (DraggableSquare !== undefined) {
-        DraggableSquare.addEventListener('mousedown', (e) => OnMouseDown(e, DraggableSquare), false);
+        DraggableSquare.addEventListener('mousedown', (e) => jsDraggableElem(e, DraggableSquare), false);
     }
+
+    SortableJS();
 };
 
 export default SetUpListeners;

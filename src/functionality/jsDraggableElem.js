@@ -1,4 +1,4 @@
-const onMouseDown = (event, nodeElement) => {
+const jsDraggableElem = (event, nodeElement) => {
     // (1) prepare to moving: make absolute and on top by z-index
     nodeElement.style.position = 'absolute';
     nodeElement.style.zIndex = 1000;
@@ -37,4 +37,4 @@ const onMouseDown = (event, nodeElement) => {
     };
 };
 
-export default onMouseDown;
+export default jsDraggableElem;
