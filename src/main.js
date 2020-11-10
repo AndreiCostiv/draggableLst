@@ -2,8 +2,8 @@
 import './main.sass';
 
 //js:
-import SetUpDraggable from './functionality/SetUpDraggable';
+import SetUpListeners from './functionality/SetUpListeners';
 
 if( document.getElementsByTagName('body')[0] !== undefined ){
-    window.addEventListener('load', () => SetUpDraggable());
+    window.addEventListener('load', () => SetUpListeners());
 }

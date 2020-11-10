@@ -7,17 +7,12 @@ import {
     dragEnd
 } from './DragFunctions';
 
-import OnMouseDown from './DraggableBall';
+import OnMouseDown from './DraggableSquare';
 
 let Dragable = document.getElementsByClassName('draggable');
 let DraggableSquare = document.getElementsByClassName('draggableSquare')[0];
 
-
-const SetUpDraggable = () => {
-    if (DraggableSquare !== undefined) {
-        DraggableSquare.addEventListener('mousedown', (e) => OnMouseDown(e, DraggableSquare), false);
-    }
-
+const SetUpListeners = () => {
     if (Dragable !== undefined) {
         for (let key in Dragable){
             if (key.length === 1) {
@@ -30,6 +25,10 @@ const SetUpDraggable = () => {
             }
         }
     }
+
+    if (DraggableSquare !== undefined) {
+        DraggableSquare.addEventListener('mousedown', (e) => OnMouseDown(e, DraggableSquare), false);
+    }
 };
 
-export default SetUpDraggable;
+export default SetUpListeners;
